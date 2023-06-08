@@ -21,7 +21,7 @@ class Client extends Model implements AuthenticatableContract, AuthorizableContr
      */
     protected $table="client";
     protected $primaryKey="idCl";
-    protected $fillable=["nomCl","prenomCl","ageCl","poidsCl","dateCl","email","password"];
+    protected $fillable=["nomCl","prenomCl","ageCl","poidsCl","choix","dateCl","email","password"];
 
     public function client_pack(){
         return $this->belongsToMany(Pack::class,"planif","idCl","idPack")->withPivot("dateFin");
